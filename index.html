@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .id-card {
+            width: 380px;
+            height: 590px;
+            background-color: #355e93;
+            /* Bottom blue background */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-top: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-right: 15px;
+            /* Offset to center the group visually */
+        }
+
+        .logo-svg {
+            width: 65px;
+            height: 65px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 2px;
+            margin-top: 5px;
+        }
+
+        .logotxt-orange {
+            color: #ea5b23;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .logotxt-blue {
+            color: #385199;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1;
+            margin-top: 1px;
+        }
+
+        .main-title {
+            color: #4252a0;
+            /* Purplish blue */
+            font-size: 27px;
+            font-weight: 900;
+            margin-top: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .sub-title {
+            color: #000000;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            background-color: #c4c4c4;
+            /* Light grey placeholder */
+            border-radius: 50%;
+            margin-top: 15px;
+            flex-shrink: 0;
+            border: none;
+        }
+
+        .name {
+            color: #ffffff;
+            font-size: 23px;
+            font-weight: 700;
+            margin-top: 20px;
+            line-height: 1.2;
+        }
+
+        .designation {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        .emp-id-bar {
+            background-color: #ffffff;
+            width: 82%;
+            height: 25px;
+            margin-top: 22px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .emp-id-text {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 130px 10px 1fr;
+            row-gap: 8px;
+            width: 82%;
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .signature {
+            width: 82%;
+            text-align: right;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="id-card">
+        <svg class="card-bg" viewBox="0 0 380 590" preserveAspectRatio="none">
+            <path d="M 0 195 Q 190 255 380 195 L 380 0 L 0 0 Z" fill="#8dc63f" />
+            <path d="M 0 180 Q 190 240 380 180 L 380 0 L 0 0 Z" fill="#ffffff" />
+            <path d="M 0 165 Q 190 225 380 165 L 380 0 L 0 0 Z" fill="#ea5b23" />
+            <path d="M 0 150 Q 190 210 380 150 L 380 0 L 0 0 Z" fill="#ffffff" />
+        </svg>
+
+        <div class="card-content">
+            <div class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 100">
+                    <!-- Leaf shape representing the orange leaf -->
+                    <path d="M 50 15 C 65 -5 85 10 70 30 C 55 25 50 20 50 15 Z" fill="#8dc63f" />
+                    <!-- Orange C Arc: Outer R=36, Inner R=22 -->
+                    <path d="M 52 14 A 36 36 0 1 0 86 45 L 70 45 A 20 20 0 1 1 48 29 Z" fill="#ea5b23" />
+                    <!-- Blue Gear center circle -->
+                    <circle cx="48" cy="54" r="15" fill="#355e93" />
+                    <!-- Gear teeth (simple approximation) -->
+                    <path
+                        d="M 44 35 h 8 v -4 h -8 z M 44 77 h 8 v -4 h -8 z M 29 50 h -4 v 8 h 4 z M 71 50 h -4 v 8 h 4 z"
+                        fill="#355e93" />
+                    <!-- Worker inside gear -->
+                    <path d="M 38 64 Q 48 50 58 64 Z" fill="#ffffff" />
+                    <circle cx="48" cy="48" r="4.5" fill="#ea5b23" />
+                    <circle cx="48" cy="48" r="2" fill="#355e93" />
+                </svg>
+                <div class="logo-text">
+                    <div class="logotxt-orange">Orange</div>
+                    <div class="logotxt-blue">Services</div>
+                </div>
+            </div>
+
+            <div class="main-title">ORANGE SERVICES</div>
+            <div class="sub-title">ISO 9001 : 2015</div>
+
+            <div class="profile-pic"></div>
+
+            <div class="name">Name</div>
+            <div class="designation">Designation</div>
+
+            <div class="emp-id-bar">
+                <div class="emp-id-text">EMPLOYEE ID :</div>
+            </div>
+
+            <div class="details-grid">
+                <div>Date of Joining</div>
+                <div>:</div>
+                <div></div>
+                <div>Mobile</div>
+                <div>:</div>
+                <div></div>
+                <div>Address</div>
+                <div>:</div>
+                <div></div>
+                <div>Valid Upto</div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="signature">Aut. Signature</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
